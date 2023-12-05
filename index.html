@@ -92,22 +92,29 @@
         }
     </style>
 </head>
-<body class="light-mode" data-lang="en">
-    <h1>Michaela Bartoňová - Freelance software developer</h1>
+<body class="light-mode" data-lang="en" id="body">
+    <h1 class="lang-en">Michaela Bartoňová - Freelance software developer</h1>
+    <h1 class="lang-cz" style="display: none;">Michaela Bartoňová - Freelance software developer (Czech)</h1>
 
     <div class="service">
-        <h3>Web Development</h3>
-        <p>I offer custom web development solutions tailored to your needs. From simple websites to complex web applications.</p>
+        <h3 class="lang-en">Web Development</h3>
+        <h3 class="lang-cz" style="display: none;">Vývoj webových stránek</h3>
+        <p class="lang-en">I offer custom web development solutions tailored to your needs. From simple websites to complex web applications.</p>
+        <p class="lang-cz" style="display: none;">Nabízím individuální řešení vývoje webových stránek přizpůsobené vašim potřebám. Od jednoduchých webových stránek až po složité webové aplikace.</p>
     </div>
 
     <div class="service">
-        <h3>Mobile App Development</h3>
-        <p>Build mobile applications for iOS and Android platforms. Let's turn your app idea into a reality.</p>
+        <h3 class="lang-en">Mobile App Development</h3>
+        <h3 class="lang-cz" style="display: none;">Vývoj mobilních aplikací</h3>
+        <p class="lang-en">Build mobile applications for iOS and Android platforms. Let's turn your app idea into a reality.</p>
+        <p class="lang-cz" style="display: none;">Stavění mobilních aplikací pro platformy iOS a Android. Udělejme vaši myšlenku na aplikaci realitou.</p>
     </div>
 
     <div class="service">
-        <h3>UI/UX Design</h3>
-        <p>Create intuitive and visually appealing user interfaces that enhance user experience and engagement.</p>
+        <h3 class="lang-en">UI/UX Design</h3>
+        <h3 class="lang-cz" style="display: none;">UI/UX design</h3>
+        <p class="lang-en">Create intuitive and visually appealing user interfaces that enhance user experience and engagement.</p>
+        <p class="lang-cz" style="display: none;">Vytváření intuitivních a vizuálně atraktivních uživatelských rozhraní, která zlepšují uživatelskou zkušenost a zapojení.</p>
     </div>
     
     <h2>Contact Me</h2>
@@ -142,14 +149,30 @@
             body.classList.toggle('light-mode');
         }
 
+        // Function to toggle language
         function toggleLanguage() {
             const body = document.body;
             const currentLang = body.getAttribute('data-lang');
 
             if (currentLang === 'en') {
+                // Switch to Czech
                 body.setAttribute('data-lang', 'cz');
+                document.querySelectorAll('.lang-en').forEach(element => element.style.display = 'none');
+                document.querySelectorAll('.lang-cz').forEach(element => element.style.display = 'inline-block');
             } else {
+                // Switch to English
                 body.setAttribute('data-lang', 'en');
+                document.querySelectorAll('.lang-en').forEach(element => element.style.display = 'inline-block');
+                document.querySelectorAll('.lang-cz').forEach(element => element.style.display = 'none');
+            }
+        }
+
+        // Function to detect browser language and set initial language
+        function detectLanguage() {
+            const browserLang = navigator.language.substring(0, 2);
+            if (browserLang === 'cs') {
+                // Set to Czech if browser language is Czech
+                toggleLanguage();
             }
         }
 
@@ -165,6 +188,9 @@
             body.classList.add('dark-mode');
             body.classList.remove('light-mode');
         }
+
+        // Call detectLanguage on page load
+        window.onload = detectLanguage;
         
     </script>
 </body>
