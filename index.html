@@ -152,6 +152,20 @@
                 body.setAttribute('data-lang', 'en');
             }
         }
+
+        // Get current hour
+        const currentHour = new Date().getHours();
+
+        // Select the body element
+        const body = document.getElementById('body');
+
+        // Check if it's nighttime (for example, from 6 PM to 6 AM)
+        if (currentHour >= 18 || currentHour < 6) {
+            // Toggle dark mode
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
+        }
+        
     </script>
 </body>
 </html>
