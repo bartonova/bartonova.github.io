@@ -12,6 +12,18 @@
             max-width: 800px;
             margin: auto;
         }
+        /* Light Mode */
+        body.light-mode {
+            background-color: #fff;
+            color: #333;
+        }
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        /* Rest of the existing styles */
         h1 {
             font-size: 32px;
             margin-bottom: 20px;
@@ -56,9 +68,31 @@
             width: 30px;
             height: 30px;
         }
+
+        
+        /* Czech Language */
+        body[data-lang="cz"] .lang-en,
+        body[data-lang="cz"] .lang-en + .lang-cz {
+            display: none;
+        }
+
+        body[data-lang="cz"] .lang-cz,
+        body[data-lang="cz"] .lang-cz + .lang-en {
+            display: inline-block;
+        }
+
+        body[data-lang="en"] .lang-cz,
+        body[data-lang="en"] .lang-cz + .lang-en {
+            display: none;
+        }
+
+        body[data-lang="en"] .lang-en,
+        body[data-lang="en"] .lang-en + .lang-cz {
+            display: inline-block;
+        }
     </style>
 </head>
-<body>
+<body class="light-mode" data-lang="en">
     <h1>Michaela Bartoňová - Freelance software developer</h1>
 
     <div class="service">
@@ -75,7 +109,7 @@
         <h3>UI/UX Design</h3>
         <p>Create intuitive and visually appealing user interfaces that enhance user experience and engagement.</p>
     </div>
-
+    
     <h2>Contact Me</h2>
     <p>If you're interested in my services or have any questions, feel free to <a href="mailto:michaela@bartonova.agency">contact me</a>.</p>
 
@@ -83,6 +117,7 @@
     Nadační 964 / 26, Odry, Czechia EU<br>
     ICO: 87356678<br>
     Email: michaela (at) bartonova.agency</p>
+
 
     <div class="social-icons">
         <a href="https://github.com/mmmika" target="_blank"><img width="25" height="24" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub"></a>
@@ -94,5 +129,29 @@
 </svg></a>
         <!-- Replace "path/to/github-icon.png" and "path/to/gitlab-icon.png" with the actual paths to your icons -->
     </div>
+
+    <div class="switch-buttons">
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <button onclick="toggleLanguage()">Toggle Language</button>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        }
+
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('data-lang');
+
+            if (currentLang === 'en') {
+                body.setAttribute('data-lang', 'cz');
+            } else {
+                body.setAttribute('data-lang', 'en');
+            }
+        }
+    </script>
 </body>
 </html>
