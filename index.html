@@ -23,12 +23,17 @@
             color: #fff;
         }
         
-        h1, h2, h3 {
+        /* Rest of the existing styles */
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        h2 {
             font-size: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         a {
             color: #3498db;
@@ -37,25 +42,50 @@
         a:hover {
             text-decoration: underline;
         }
+        .contact-info {
+            font-size: 14px;
+        }
         .service {
             border-bottom: 1px solid #ddd;
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
+        .service h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .service p {
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
         
-        /* Language Control */
+        /* Czech Language */
         body[data-lang="cz"] .lang-en,
         body[data-lang="cz"] .lang-en + .lang-cz {
             display: none;
         }
+
         body[data-lang="cz"] .lang-cz,
         body[data-lang="cz"] .lang-cz + .lang-en {
             display: inline-block;
         }
+
         body[data-lang="en"] .lang-cz,
         body[data-lang="en"] .lang-cz + .lang-en {
             display: none;
         }
+
         body[data-lang="en"] .lang-en,
         body[data-lang="en"] .lang-en + .lang-cz {
             display: inline-block;
@@ -63,94 +93,106 @@
     </style>
 </head>
 <body class="light-mode" data-lang="en" id="body">
+    <h1 class="lang-en">Michaela Bartoňová - Freelance software developer</h1>
+    <h1 class="lang-cz" style="display: none;">Michaela Bartoňová - Freelance software developer</h1>
 
-    <h1 class="lang-en">About Me (Self-Employed/Entrepreneur)</h1>
-    <h1 class="lang-cz" style="display: none;">O Mně (OSVČ/Podnikatel)</h1>
-    <p class="lang-en">As a self-employed software developer with over X years of experience, I specialize in providing custom software solutions tailored to my clients' needs. I offer a comprehensive range of services, from mobile, desktop, and web application development to backend and database solutions, enabling me to tackle projects of various sizes and complexity.</p>
-    <p class="lang-cz" style="display: none;">Jako OSVČ se specializuji na vývoj a poskytování custom softwarových řešení na míru. S více než X lety zkušeností v oblasti vývoje softwaru a IT technologií, se zaměřuji na návrh a implementaci aplikací a systémů šitých na míru potřebám klientů. Mé služby pokrývají široké spektrum od mobilních aplikací, přes desktopové a webové aplikace, až po vývoj backendových a databázových řešení, což mi umožňuje realizovat projekty různých velikostí a složitostí.</p>
-
-    <h2 class="lang-en">My services include:</h2>
-    <h2 class="lang-cz" style="display: none;">Služby zahrnují:</h2>
-    <ul>
-        <li class="lang-en">Custom software development (mobile, web, desktop applications)</li>
-        <li class="lang-cz" style="display: none;">Vývoj custom softwaru (mobilní, webové, desktopové aplikace)</li>
-        <!-- Add more services from both languages here -->
-    </ul>
-
-    <!-- Custom Software Development Section -->
     <div class="service">
-        <h3 class="lang-en">Custom Software Development</h3>
-        <h3 class="lang-cz" style="display: none;">Vývoj Custom Software</h3>
-        <p class="lang-en">I offer full-service mobile application development for both Android and iOS platforms, covering everything from design and programming to testing and deployment on App Store and Google Play.</p>
-        <p class="lang-cz" style="display: none;">Poskytuji kompletní služby v oblasti vývoje mobilních aplikací pro platformy Android a iOS. Od návrhu a designu, přes programování a testování, až po nasazení do App Store a Google Play.</p>
-
-        <!-- Mobile App Examples -->
-        <ul>
-            <li class="lang-en">Navigation apps, multimedia apps, e-commerce apps</li>
-            <li class="lang-cz" style="display: none;">Navigační aplikace, multimediální aplikace, e-commerce aplikace</li>
-            <!-- Continue with more mobile app examples from both languages -->
-        </ul>
+        <h3 class="lang-en">Web Development</h3>
+        <h3 class="lang-cz" style="display: none;">Vývoj webových stránek</h3>
+        <p class="lang-en">I offer custom web development solutions tailored to your needs. From simple websites to complex web applications.</p>
+        <p class="lang-cz" style="display: none;">Nabízím individuální řešení vývoje webových stránek přizpůsobené vašim potřebám. Od jednoduchých webových stránek až po složité webové aplikace.</p>
     </div>
 
-    <!-- Full-Stack Development Section -->
     <div class="service">
-        <h3 class="lang-en">Full-Stack Development</h3>
-        <h3 class="lang-cz" style="display: none;">Full-Stack Vývoj</h3>
-        <p class="lang-en">I provide full-stack application development services using modern technology stacks, covering backend, frontend, and database layers.</p>
-        <p class="lang-cz" style="display: none;">Nabízím vývoj full-stack aplikací s využitím moderních technologických stacků, které pokrývají backend, frontend a databázovou vrstvu.</p>
-        
-        <h4 class="lang-en">Backend Technologies</h4>
-        <h4 class="lang-cz" style="display: none;">Backend technologie</h4>
-        <ul>
-            <li class="lang-en">Spring Boot, Node.js, Django</li>
-            <li class="lang-cz" style="display: none;">Spring Boot, Node.js, Django</li>
-            <!-- Continue with backend technologies from both languages -->
-        </ul>
-
-        <h4 class="lang-en">Frontend Technologies</h4>
-        <h4 class="lang-cz" style="display: none;">Frontend technologie</h4>
-        <ul>
-            <li class="lang-en">React.js, Angular.js, Vue.js</li>
-            <li class="lang-cz" style="display: none;">React.js, Angular.js, Vue.js</li>
-            <!-- Continue with frontend technologies from both languages -->
-        </ul>
-
-        <h4 class="lang-en">Database Technologies</h4>
-        <h4 class="lang-cz" style="display: none;">Databázové technologie</h4>
-        <ul>
-            <li class="lang-en">MySQL, MongoDB, Neo4j</li>
-            <li class="lang-cz" style="display: none;">MySQL, MongoDB, Neo4j</li>
-            <!-- Continue with database technologies from both languages -->
-        </ul>
+        <h3 class="lang-en">Mobile App Development</h3>
+        <h3 class="lang-cz" style="display: none;">Vývoj mobilních aplikací</h3>
+        <p class="lang-en">Build mobile applications for iOS and Android platforms. Let's turn your app idea into a reality.</p>
+        <p class="lang-cz" style="display: none;">Stavění mobilních aplikací pro platformy iOS a Android. Udělejme vaši myšlenku na aplikaci realitou.</p>
     </div>
 
-    <!-- Continue expanding with more sections -->
+    <div class="service">
+        <h3 class="lang-en">UI/UX Design</h3>
+        <h3 class="lang-cz" style="display: none;">UI/UX design</h3>
+        <p class="lang-en">Create intuitive and visually appealing user interfaces that enhance user experience and engagement.</p>
+        <p class="lang-cz" style="display: none;">Vytváření intuitivních a vizuálně atraktivních uživatelských rozhraní, která zlepšují uživatelskou zkušenost a zapojení.</p>
+    </div>
+    
+    <h2>Contact Me</h2>
+    <p class="lang-en">If you're interested in my services or have any questions, feel free to <a href="mailto:michaela@bartonova.agency">contact me</a>.</p>
+    <p class="lang-cz">Pokud máte zájem o služby zkázkového vývoje nebo nějaké dotazy ohledně služeb, potom mě klidně <a href="mailto:michaela@bartonova.agency">kontaktujte zde</a>.</p>
 
-    <!-- Footer and Contact Info -->
-    <h2 class="lang-en">Contact Me</h2>
-    <h2 class="lang-cz" style="display: none;">Kontaktujte mě</h2>
-    <p class="lang-en">Feel free to <a href="mailto:michaela@bartonova.agency">contact me</a> for any inquiries.</p>
-    <p class="lang-cz" style="display: none;">Pokud máte zájem o moje služby, klidně mě <a href="mailto:michaela@bartonova.agency">kontaktujte</a>.</p>
+    <p class="contact-info">Michaela Bartoňová<br>
+    Czechia EU<br>
+    ICO: 87356678 registered business person<br>
+    Email: bartonova.michaela (at) email.cz</p>
+
+
+    <div class="social-icons">
+        <a href="https://github.com/mmmika" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="25" height="25"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+        <a href="https://gitlab.com/bartonova" target="_blank"><svg aria-hidden="true" role="img" class="tanuki-logo" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="tanuki-shape tanuki" d="m24.507 9.5-.034-.09L21.082.562a.896.896 0 0 0-1.694.091l-2.29 7.01H7.825L5.535.653a.898.898 0 0 0-1.694-.09L.451 9.411.416 9.5a6.297 6.297 0 0 0 2.09 7.278l.012.01.03.022 5.16 3.867 2.56 1.935 1.554 1.176a1.051 1.051 0 0 0 1.268 0l1.555-1.176 2.56-1.935 5.197-3.89.014-.01A6.297 6.297 0 0 0 24.507 9.5Z" fill="#E24329"></path>
+  <path class="tanuki-shape right-cheek" d="m24.507 9.5-.034-.09a11.44 11.44 0 0 0-4.56 2.051l-7.447 5.632 4.742 3.584 5.197-3.89.014-.01A6.297 6.297 0 0 0 24.507 9.5Z" fill="#FC6D26"></path>
+  <path class="tanuki-shape chin" d="m7.707 20.677 2.56 1.935 1.555 1.176a1.051 1.051 0 0 0 1.268 0l1.555-1.176 2.56-1.935-4.743-3.584-4.755 3.584Z" fill="#FCA326"></path>
+  <path class="tanuki-shape left-cheek" d="M5.01 11.461a11.43 11.43 0 0 0-4.56-2.05L.416 9.5a6.297 6.297 0 0 0 2.09 7.278l.012.01.03.022 5.16 3.867 4.745-3.584-7.444-5.632Z" fill="#FC6D26"></path>
+</svg></a>
+        <!-- Replace "path/to/github-icon.png" and "path/to/gitlab-icon.png" with the actual paths to your icons -->
+    </div>
+
+    <div class="switch-buttons">
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <button onclick="toggleLanguage()">Toggle Language</button>
+    </div>
 
     <script>
-        function toggleTheme() {
-            const body = document.getElementById('body');
-            if (body.classList.contains('light-mode')) {
-                body.classList.replace('light-mode', 'dark-mode');
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        }
+
+        // Function to toggle language
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('data-lang');
+
+            if (currentLang === 'en') {
+                // Switch to Czech
+                body.setAttribute('data-lang', 'cz');
+                document.querySelectorAll('.lang-en').forEach(element => element.style.display = 'none');
+                document.querySelectorAll('.lang-cz').forEach(element => element.style.display = 'inline-block');
             } else {
-                body.classList.replace('dark-mode', 'light-mode');
+                // Switch to English
+                body.setAttribute('data-lang', 'en');
+                document.querySelectorAll('.lang-en').forEach(element => element.style.display = 'inline-block');
+                document.querySelectorAll('.lang-cz').forEach(element => element.style.display = 'none');
             }
         }
 
-        function toggleLanguage() {
-            const body = document.getElementById('body');
-            const currentLang = body.getAttribute('data-lang');
-            body.setAttribute('data-lang', currentLang === 'en' ? 'cz' : 'en');
+        // Function to detect browser language and set initial language
+        function detectLanguage() {
+            const browserLang = navigator.language.substring(0, 2);
+            if (browserLang === 'cs') {
+                // Set to Czech if browser language is Czech
+                toggleLanguage();
+            }
         }
+
+        // Get current hour
+        const currentHour = new Date().getHours();
+
+        // Select the body element
+        const body = document.getElementById('body');
+
+        // Check if it's nighttime (for example, from 6 PM to 6 AM)
+        if (currentHour >= 18 || currentHour < 6) {
+            // Toggle dark mode
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
+        }
+
+        // Call detectLanguage on page load
+        window.onload = detectLanguage;
+        
     </script>
-
-    <button onclick="toggleTheme()">Toggle Theme</button>
-    <button onclick="toggleLanguage()">Switch Language</button>
-
 </body>
 </html>
