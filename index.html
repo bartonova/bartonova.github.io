@@ -200,6 +200,9 @@
              if (browserLang === 'cs') {
                  // Set to Czech if browser language is Czech
                  toggleLanguage();
+             } else {
+                 toggleLanguage();
+                 toggleLanguage();
              }
          }
  
@@ -218,6 +221,8 @@
  
          // Call detectLanguage on page load
          window.onload = detectLanguage;
+
+         detectLanguage();
          
      </script>
 </body>
