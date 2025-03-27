@@ -12,6 +12,39 @@
             padding: 20px;
             max-width: 1024px;
             margin: auto;
+            text-rendering: optimizeLegibility; /* Improves font rendering for better readability */
+            -webkit-font-smoothing: antialiased; /* Font smoothing for Webkit browsers (Chrome, Safari) */
+            -moz-osx-font-smoothing: grayscale; /* Font smoothing for Firefox on macOS */
+            font-weight: 400; /* Standard weight for optimal readability */
+            font-size: 16px; /* Base font size for better clarity */
+            letter-spacing: 0.5px; /* Slight letter-spacing for readability */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+            word-wrap: break-word; /* Prevents word overflow in responsive layouts */
+            background-color: #fafafa; /* Light background for readability */
+            color: #333; /* Dark text for contrast */
+            font-feature-settings: "liga" 1, "kern" 1; /* Enables ligatures and kerning for better typography */
+            transform: scale(1); /* Keeps font at normal scale; can adjust for pixel-perfect rendering if needed */
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        }
+        
+        html {
+            font-size: 100%; /* Base font size for scaling */
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px; /* Adjust font size on smaller screens */
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            body {
+                font-size: 18px; /* Adjust font size on larger screens */
+            }
         }
 
         /* Custom Styles */
