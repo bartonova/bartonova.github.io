@@ -26,6 +26,15 @@
             font-feature-settings: "liga" 1, "kern" 1; /* Enables ligatures and kerning for better typography */
             transform: scale(1); /* Keeps font at normal scale; can adjust for pixel-perfect rendering if needed */
             overflow-x: hidden;
+
+            /* Keyword values */
+            scroll-behavior: auto;
+            scroll-behavior: smooth;
+
+            /* Global values */
+            scroll-behavior: inherit;
+            scroll-behavior: initial;
+            scroll-behavior: unset;
         }
 
         .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -243,21 +252,124 @@
           margin-top: 38px;
         }
 
+
+        .search-container {
+              position: absolute;
+                top: 16px;
+                left: 18%;
+                right: 0;
+                bottom: 0;
+                width: 600px;
+                height: 42px;
+
+          .search {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            /* background: white; */
+            /* border-radius: 4%; */
+            transition: all 0.1s;
+            z-index: 4;
+          }
+
+          input {
+            position: absolute;
+            margin: auto;
+            padding: 0px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 32px;
+            height: 20px;
+            outline: none;
+            /* border: 1px solid rgba(0, 0, 0, 0.4); */
+            /* border-bottom: 1px solid rgba(255, 0, 0, 0.72); */
+            background: white;
+            color: #000000d4;
+            /* text-shadow: 0 0 10px white; */
+            padding: 10px;
+            /* border-radius: 4px; */
+            /* box-shadow: 0 0 4px 0 white, 0 4px 4px 0 rgba(0, 0, 0, 0.1); */
+            transition: all 0.2s;
+            opacity: 0;
+            z-index: 5;
+            font-weight: light;
+            letter-spacing: 0.1em;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:focus {
+                width: 600px;
+                height: 32px;
+                border-width: thin;
+                border-radius: 1px;
+                border-color: rgba(0, 0, 0, 0.2);
+                opacity: 1;
+                cursor: text;
+                font-size: small;
+            }
+
+            &:focus ~ .search {
+                right: -567px;
+                margin-top: 2px;
+                margin-bottom: 2px;
+                /* background: #15151500; */
+                z-index: 6;
+                /* box-shadow: 0 0 4px 0 white, 0 4px 4px 0 rgba(0, 0, 0, 0.1); */
+                height: 32px;
+                /* border-radius: 4px; */
+
+              &::before {
+                top: 0;
+                left: 0;
+                width: 25px;
+                background: white;
+              }
+
+              &::after {
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 2px;
+                border: none;
+                background: white;
+                border-radius: 0%;
+                transform: rotate(-45deg);
+              }
+            }
+
+            &::placeholder {
+              color: black;
+              opacity: 0.5;
+              font-weight: bolder;
+            }
+          }
+        }
+
+
         .btn-info {
-    --bs-btn-color: #ffffffcc;
-    --bs-btn-bg: #3c575d;
-    --bs-btn-border-color: #374b4f;
-    --bs-btn-hover-color: #ffffff;
-    --bs-btn-hover-bg: #4a6167;
-    --bs-btn-hover-border-color: #2a383b5e;
-    --bs-btn-focus-shadow-rgb: 11, 172, 204;
-    --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #76b8c5;
-    --bs-btn-active-border-color: #25cff273;
-    --bs-btn-active-shadow: inset 5px 3px 5px rgb(0 0 0 / 57%);
-    --bs-btn-disabled-color: #000;
-    --bs-btn-disabled-bg: #0dca;
-    --bs-btn-disabled-border-color: #0dcaf06e;
+            --bs-btn-color: #ffffffcc;
+            --bs-btn-bg: #3c575d;
+            --bs-btn-border-color: #374b4f;
+            --bs-btn-hover-color: #ffffff;
+            --bs-btn-hover-bg: #4a6167;
+            --bs-btn-hover-border-color: #2a383b5e;
+            --bs-btn-focus-shadow-rgb: 11, 172, 204;
+            --bs-btn-active-color: #000;
+            --bs-btn-active-bg: #76b8c5;
+            --bs-btn-active-border-color: #25cff273;
+            --bs-btn-active-shadow: inset 5px 3px 5px rgb(0 0 0 / 57%);
+            --bs-btn-disabled-color: #000;
+            --bs-btn-disabled-bg: #0dca;
+            --bs-btn-disabled-border-color: #0dcaf06e;
         }
 
         @keyframes reveal {
@@ -379,14 +491,168 @@
           }
         }
 
+
+        .search-container {
+    position: absolute;
+    top: 16px;
+    left: 18%;
+    right: 0;
+    bottom: 0;
+    width: 600px;
+    height: 42px;
+}
+
+.search-container {
+    & input {
+        &:focus {
+            width: 600px;
+            height: 32px;
+            border-width: thin;
+            border-radius: 1px;
+            border-color: rgba(0, 0, 0, 0.2);
+            opacity: 1;
+            cursor: text;
+            font-size: small;
+        }
+    }
+}
+.search-container {
+    input {
+        position: absolute;
+        margin: auto;
+        padding: 0px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 32px;
+        height: 20px;
+        outline: none;
+        /* border: 1px solid rgba(0, 0, 0, 0.4); */
+        /* border-bottom: 1px solid rgba(255, 0, 0, 0.72); */
+        background: white;
+        color: #000000d4;
+        /* text-shadow: 0 0 10px white; */
+        padding: 10px;
+        /* border-radius: 4px; */
+        /* box-shadow: 0 0 4px 0 white, 0 4px 4px 0 rgba(0, 0, 0, 0.1); */
+        transition: all 0.2s;
+        opacity: 0;
+        z-index: 5;
+        font-weight: light;
+        letter-spacing: 0.1em;
+    }
+}
+
+.search-container {
+    & input {
+        &:focus ~ .search {
+            right: -567px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            color: gray;
+            /* background: #15151500; */
+            z-index: 6;
+            /* box-shadow: 0 0 4px 0 white, 0 4px 4px 0 rgba(0, 0, 0, 0.1); */
+            height: 32px;
+            /* border-radius: 4px; */
+        }
+    }
+}
+.search-container {
+    .search {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        /* background: white; */
+        /* border-radius: 4%; */
+        transition: all 0.1s;
+        z-index: 4;
+    }
+}
+
+* {
+    font-family: "Roboto", sans-serif !important;
+}
+
+.search-img {
+    margin-top: 6px;
+    width: 24px;
+    height: 24px;
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    /*background-color: white;*/
+    mix-blend-mode: darken;
+    vertical-align: middle;
+}
+
+.search-container.dark-mode {
+    color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+
+        & input {
+        &:focus {
+            color: rgba(255, 255, 255, 0.9) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+        }
+    }
+}
+
+    .search {
+            font-size: 11px;
+        width: 38px !important;
+        color: rgb(139 139 139 / 26%) !important;
+    }
+
+        /* width */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+        .gallery {
+            max-width: 1200px;
+        }
+
+    .gallery-line {
+        img {
+            border: solid 2px #0000000f;
+        }
+    }
+
     </style>
 </head>
 <body class="light-mode" data-lang="en" id="body" class="fade-in">
 
-    <div class="reveal" style="margin-top:180px;">
+    <div class="search-container">
+        <input type="text" placeholder="Hledat...">
+        <div class="search">search</div><!--<img src="search.png" class="search-img"/>-->
+    </div>
+
+    <div class="reveal" style="margin-top:210px;">
         <span class="shadows">Bartonova</span>
     </div>
-    <div class="credits"><a href="http://www.aniket.co" target="_blank">https://bartonova.github.io</a></div>
+    <div class="credits"><a href="http://bartonova.github.io" target="_blank">https://bartonova.github.io</a></div>
 
     <!-- <h1 class="text-center fade-in-low lang-en">Michaela Bartoňová - Freelance Software Developer</h1> -->
     <h1 class="text-center fade-in-low lang-cz" style="display: none;margin-top: 4px;">Michaela Bartoňová - Freelance Software Developer</h1>
@@ -397,6 +663,18 @@
             <h3 class="lang-cz" style="display: none;">Vývoj webových stránek</h3>
             <p class="lang-en">I offer custom web development solutions tailored to your needs. From simple websites to complex web applications. I use modern technologies such as HTML5, CSS3, JavaScript, and frameworks like React and Angular to create responsive, high-performance websites.</p>
             <p class="lang-cz" style="display: none;">Nabízím individuální řešení vývoje webových stránek přizpůsobené vašim potřebám. Od jednoduchých webových stránek až po složité webové aplikace. Používám moderní technologie jako HTML5, CSS3, JavaScript a frameworky jako React a Angular pro vytváření responzivních a výkonných webů.</p>
+
+            <!--<div class="gallery-row gallery" id="myGrid1" style="margin-bottom:24px">
+                <div class="gallery-line">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                    <img src="/images/portfolio (3).webp" style="width:16%">
+                    <img src="/images/portfolio (4).webp" style="width:16%">
+                    <img src="/images/portfolio (5).webp" style="width:16%">
+                </div>
+            </div>-->
+
         </div>
 
         <div class=" fade-in-low service">
@@ -404,6 +682,18 @@
             <h3 class="lang-cz" style="display: none;">Vývoj mobilních aplikací</h3>
             <p class="lang-en">Build mobile applications for iOS and Android platforms. Let's turn your app idea into a reality using Java, Kotlin, Swift, and Flutter. Whether it’s a native app or cross-platform, I provide end-to-end development, from design to deployment.</p>
             <p class="lang-cz" style="display: none;">Stavím mobilní aplikace pro platformy iOS a Android. Přetvořme vaši myšlenku na aplikaci pomocí Java, Kotlin, Swift nebo Flutter. Ať už se jedná o nativní aplikaci nebo multiplatformní řešení, nabízím komplexní vývoj od návrhu po nasazení.</p>
+
+            <!--<div class="gallery-row gallery" id="myGrid2" style="margin-bottom:24px">
+                <div class="gallery-line">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                    <img src="/images/portfolio (3).webp" style="width:16%">
+                    <img src="/images/portfolio (4).webp" style="width:16%">
+                    <img src="/images/portfolio (5).webp" style="width:16%">
+                </div>
+            </div>-->
+
         </div>
 
         <div class=" fade-in-low service">
@@ -411,6 +701,18 @@
             <h3 class="lang-cz" style="display: none;">UI/UX design</h3>
             <p class="lang-en">Create intuitive and visually appealing user interfaces that enhance user experience and engagement. I provide wireframing, prototyping, and UI/UX design for both web and mobile applications, ensuring an optimal user experience across devices.</p>
             <p class="lang-cz" style="display: none;">Vytvářím intuitivní a vizuálně atraktivní uživatelská rozhraní, která zlepšují uživatelskou zkušenost a zapojení. Nabízím tvorbu wireframů, prototypování a UI/UX design pro webové a mobilní aplikace, zajistím optimální uživatelskou zkušenost na všech zařízeních.</p>
+
+            <!--<div class="gallery-row gallery" id="myGrid3" style="margin-bottom:24px">
+                <div class="gallery-line">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                    <img src="/images/portfolio (3).webp" style="width:16%">
+                    <img src="/images/portfolio (4).webp" style="width:16%">
+                    <img src="/images/portfolio (5).webp" style="width:16%">
+                </div>
+            </div>-->
+
         </div>
 
         <div class=" fade-in-low service">
@@ -418,6 +720,18 @@
             <h3 class="lang-cz" style="display: none;">Vývoj na míru</h3>
             <p class="lang-en">Specialized in creating custom solutions for full-stack development, whether backend, frontend, or mobile apps. Technologies include Python, Java, Kotlin, JavaScript, Node.js, React, and more. Let me help you with tailored software solutions that fit your business needs.</p>
             <p class="lang-cz" style="display: none;">Specializuji se na vytváření individuálních řešení pro full-stack vývoj, ať už backend, frontend nebo mobilní aplikace. Používám technologie jako Python, Java, Kotlin, JavaScript, Node.js, React a další. Pomohu vám s vývojem na míru, který bude vyhovovat potřebám vaší firmy.</p>
+
+            <!--<div class="gallery-row gallery" id="myGrid4" style="margin-bottom:24px">
+                <div class="gallery-line">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                    <img src="/images/portfolio (3).webp" style="width:16%">
+                    <img src="/images/portfolio (4).webp" style="width:16%">
+                    <img src="/images/portfolio (5).webp" style="width:16%">
+                </div>
+            </div>-->
+
         </div>
 
         <div class=" fade-in-low service">
@@ -425,7 +739,43 @@
             <h3 class="lang-cz" style="display: none;">Integrace aplikací a aktualizace</h3>
             <p class="lang-en">I provide integration of third-party services and update existing applications to enhance functionality and performance. SLA agreements are available. Whether integrating payment gateways, CRM systems, or cloud services, I ensure smooth, efficient integration processes.</p>
             <p class="lang-cz" style="display: none;">Nabízím integraci třetích stran a aktualizace stávajících aplikací pro zlepšení funkcionality a výkonu. Možné je i uzavření SLA dohod. Ať už se jedná o integraci platebních bran, CRM systémů nebo cloudových služeb, zajistím hladký a efektivní integrační proces.</p>
+
+            <!--<div class="gallery-row gallery" id="myGrid5" style="margin-bottom:24px">
+                <div class="gallery-line">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                    <img src="/images/portfolio (3).webp" style="width:16%">
+                    <img src="/images/portfolio (4).webp" style="width:16%">
+                    <img src="/images/portfolio (5).webp" style="width:16%">
+                </div>
+            </div>-->
+
         </div>
+
+
+        <!--<div class="fade-in service gallery">
+            <h3 class="lang-en">Examples</h3>
+            <h3 class="lang-cz" style="display: none;">Projekty</h3>
+            <div class="gallery-row" id="myGrid" style="margin-bottom:128px">
+                <div class="gallery-line">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                    <img src="/images/portfolio (3).webp" style="width:16%">
+                    <img src="/images/portfolio (4).webp" style="width:16%">
+                    <img src="/images/portfolio (5).webp" style="width:16%">
+                </div>
+                <div class="gallery-line">
+                    <img src="/images/portfolio (6).webp" style="width:16%">
+                    <img src="/images/portfolio (7).webp" style="width:16%">
+                    <img src="/images/portfolio (8).webp" style="width:16%">
+                    <img src="/images/portfolio (9).webp" style="width:16%">
+                    <img src="/images/portfolio (1).webp" style="width:16%">
+                    <img src="/images/portfolio (2).webp" style="width:16%">
+                </div>
+            </div>
+        </div>-->
 
         <div class=" fade-in-low service">
             <h2 class=" fade-in-low">Contact Me</h2>
@@ -503,7 +853,13 @@
             }
         }
 
-        window.onload = detectLanguage;
+        function init() {
+            detectLanguage();
+
+            // document.getElementById('')
+        }
+
+        window.onload = init;
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
